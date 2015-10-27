@@ -1,0 +1,1 @@
+angular.module('mmm', ['mmm.controllers', 'mmm.services'])
