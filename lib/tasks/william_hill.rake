@@ -26,4 +26,7 @@ end
 def go_to_william_hill
   url = "http://sports.williamhill.com/bet/en-gb/betlive/all"
   visit url
+  until all("#popupMain").length > 0
+    puts "Arrived!"
+  end
 end
