@@ -20,13 +20,19 @@ task :william_hill => :environment do |t, args|
   end
 
   go_to_william_hill
+  find_main_popup_and_accept
+
   puts "#{(Time.now - time) / 60} minutes"
 end
 
 def go_to_william_hill
   url = "http://sports.williamhill.com/bet/en-gb/betlive/all"
   visit url
+end
+
+def find_main_popup_and_accept
   until all("#popupMain").length > 0
     puts "Arrived!"
   end
+  find("#yesBtn").click
 end
